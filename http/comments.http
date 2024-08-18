@@ -1,0 +1,30 @@
+### Create a new comment on a post
+POST http://localhost:3000/api/posts/66c1f01bbb4bc2f9cc50cca6/comments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmMxZWY4OWJiNGJjMmY5Y2M1MGNjYTMiLCJpYXQiOjE3MjM5ODU4MDUsImV4cCI6MTcyMzk4OTQwNX0.AlpDtBZHWO2ZbuN4WBI4ZffY0pV9oMUz1FoyyUMqBug
+Content-Type: application/json
+
+{
+  "text": "This is a new comment on post 1"
+}
+
+
+### Reply to an existing comment
+POST http://localhost:3000/api/posts/66c1f01bbb4bc2f9cc50cca6/comments/66c1f06bbb4bc2f9cc50cca8/reply
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmMxZWY4OWJiNGJjMmY5Y2M1MGNjYTMiLCJpYXQiOjE3MjM5ODU4MDUsImV4cCI6MTcyMzk4OTQwNX0.AlpDtBZHWO2ZbuN4WBI4ZffY0pV9oMUz1FoyyUMqBug
+Content-Type: application/json
+
+{
+  "text": "This is a reply to comment 123"
+}
+
+
+### Get comments for a specific post
+GET http://localhost:3000/api/posts/66c1f01bbb4bc2f9cc50cca6/comments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmMxZWY4OWJiNGJjMmY5Y2M1MGNjYTMiLCJpYXQiOjE3MjM5ODU4MDUsImV4cCI6MTcyMzk4OTQwNX0.AlpDtBZHWO2ZbuN4WBI4ZffY0pV9oMUz1FoyyUMqBug
+Content-Type: application/json
+
+
+### Expand a top-level comment with pagination
+GET http://localhost:3000/api/posts/1/comments/123/expand?page=1&pageSize=10
+Authorization: Bearer {{YOUR_JWT_TOKEN}}
+Content-Type: application/json

@@ -1,0 +1,9 @@
+### Create a new post
+POST http://localhost:3000/api/posts/create
+Authorization: Bearer {{YOUR_JWT_TOKEN}}
+Content-Type: application/json
+
+{
+  "title": "First Post",
+  "content": "This is the content of the first post."
+}
